@@ -1,9 +1,14 @@
 const express = require('express');
-
 const server = express();
 
-server.get('/', (req, res) => {
-  res.send('hello');
-})
+const usersRouter = require('./src/routes/users');
+const headersMW = require('./src/helpers/headers');
+
+server.disable('etag');
+
+server.use(express.urlencoded({extended: false}));
+server.use(express.json());
+server.use(headersMW);
+server.use('/users', usersRouter);
 
 server.listen(5555);
