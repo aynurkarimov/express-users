@@ -1,4 +1,4 @@
-const STATUS_CODES = {
+const STATUS_CODE = {
   OK: 200,
   CREATED: 201,
   BAD_REQUEST: 400,
@@ -6,5 +6,5 @@ const STATUS_CODES = {
 }
 
 module.exports = {
-  STATUS_CODES
+  STATUS_CODE
 }
